@@ -99,6 +99,14 @@ sh tools/run_eval.sh
 ## 🚴‍♀️贡献指南
 我们感谢所有为了改进AdaDet而做的贡献，也欢迎社区用户积极参与到本项目中来。请参考[CONTRIBUTING.md](./CONTRIBUTING.md)来了解参与项目贡献的相关指引。
 
+## ✉️技术交流
+* 有任何问题和建议，欢迎在[GitHub Issues](https://github.com/modelscope/AdaDet/issues)提交issue。
+* 欢迎加入AdaDet社区交流钉钉群(群号：31370014275, 可扫描下方二维码加入)。
+
+<div align="center">
+<img src="./docs/assets/DingTalk_QR_code.png" height="150px" width="150px">
+</div>
+
 ## ⚠️许可证书
 本项目的发布受Apache 2.0 license许可认证。
 

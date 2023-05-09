@@ -100,6 +100,14 @@ Tutorials of models which support train/eval function can be found in the [folde
 ## 🚴‍♀️CONTRIBUTING
 All contributions are welcome to improve AdaDet. Please refer to [CONTRIBUTING.md](./CONTRIBUTING.md) for the contributing guideline.
 
+## ✉️COMMUNITY
+* If you have any questions or suggestions about AdaDet, please create issues through [GitHub Issues](https://github.com/modelscope/AdaDet/issues).
+* Welcome to join AdaDet DingTalk group (Group ID: 31370014275, please scan the QR code below).
+
+<div align="center">
+<img src="./docs/assets/DingTalk_QR_code.png" height="150px" width="150px">
+</div>
+
 ## ⚠️License
 This project is licensed under the [Apache License (Version 2.0)](./LICENSE).
 
