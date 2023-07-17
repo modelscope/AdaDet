@@ -6,7 +6,7 @@ from adadet.utils.visualization import get_color
 
 from modelscope.outputs import OutputKeys
 from modelscope.pipelines import pipeline
-from modelscope.utils.constant import Tasks
+from modelscope.utils.constant import Tasks, ThirdParty
 from modelscope.utils.logger import get_logger
 from .deploy import DEPLOYS, Deploy
 
@@ -26,7 +26,9 @@ class BreakInDet(Deploy):
 
         self.check_region_polygon()
         self.pipeline = pipeline(
-            Tasks.domain_specific_object_detection, model=model_id)
+            Tasks.domain_specific_object_detection,
+            model=model_id,
+            third_party=getattr(ThirdParty, 'ADADET', 'adadet'))
         self.result_dict = {}  # save detection result with frame idx as key
 
     def check_region_polygon(self):

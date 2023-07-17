@@ -8,7 +8,7 @@ from adadet.utils.visualization import get_color
 
 from modelscope.outputs import OutputKeys
 from modelscope.pipelines import pipeline
-from modelscope.utils.constant import Tasks
+from modelscope.utils.constant import Tasks, ThirdParty
 from modelscope.utils.logger import get_logger
 from .deploy import DEPLOYS, Deploy
 
@@ -37,7 +37,10 @@ class FaceRetouch(Deploy):
         self.filter_map_film = cv2.imread('adadet/resource/058_film.png')
         self.filter_map_white = cv2.imread('adadet/resource/whiten.jpg')
 
-        self.pipeline = pipeline(Tasks.face_2d_keypoints, model=model_id)
+        self.pipeline = pipeline(
+            Tasks.face_2d_keypoints,
+            model=model_id,
+            third_party=getattr(ThirdParty, 'ADADET', 'adadet'))
 
     def __call__(self, input) -> dict:
 

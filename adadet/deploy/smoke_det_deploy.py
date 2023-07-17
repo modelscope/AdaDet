@@ -9,7 +9,7 @@ import numpy as np
 from adadet.utils.constants import StateCode
 
 from modelscope.pipelines import pipeline
-from modelscope.utils.constant import Tasks
+from modelscope.utils.constant import Tasks, ThirdParty
 from modelscope.utils.logger import get_logger
 from .deploy import DEPLOYS, Deploy
 
@@ -27,9 +27,13 @@ class SmokeDetection(Deploy):
             'cigarette_det',
             'damo/cv_tinynas_object-detection_damoyolo_cigarette')
         self.human_det_pipeline = pipeline(
-            Tasks.domain_specific_object_detection, model=human_det_model_id)
+            Tasks.domain_specific_object_detection,
+            model=human_det_model_id,
+            third_party=getattr(ThirdParty, 'ADADET', 'adadet'))
         self.cigs_det_pipeline = pipeline(
-            Tasks.domain_specific_object_detection, model=cigs_det_model_id)
+            Tasks.domain_specific_object_detection,
+            model=cigs_det_model_id,
+            third_party=getattr(ThirdParty, 'ADADET', 'adadet'))
         metric_type = rules.get('type', 'ioa')
         self.is_video = rules.get('is_video', False)
         self.frame_rate = rules.get('frame_rate', 1)

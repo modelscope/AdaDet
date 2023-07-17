@@ -2,7 +2,7 @@
 import cv2
 
 from modelscope.pipelines import pipeline
-from modelscope.utils.constant import Tasks
+from modelscope.utils.constant import Tasks, ThirdParty
 from modelscope.utils.logger import get_logger
 from .deploy import DEPLOYS, Deploy
 
@@ -15,7 +15,9 @@ class MOTCounting(Deploy):
     def __init__(self, model_id, rules) -> None:
         super().__init__()
         self.mot_pipeline = pipeline(
-            Tasks.video_multi_object_tracking, model=model_id)
+            Tasks.video_multi_object_tracking,
+            model=model_id,
+            third_party=getattr(ThirdParty, 'ADADET', 'adadet'))
         self.line = rules
         self.vis = True
 

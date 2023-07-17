@@ -18,7 +18,7 @@ class FaceRetouchDeploy(unittest.TestCase):
         return super().tearDown()
 
     @unittest.skipUnless(test_level() >= 0, 'skip test in current test level')
-    def test_break_in_det_deploy_image(self):
+    def test_face_retouch_deploy_image(self):
         cfg = Config.from_file(self.config_path)
         cfg.adadet_deploy.rules.is_video = False
         face_retouch_deploy = deploy(cfg)
